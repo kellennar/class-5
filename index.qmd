@@ -1,0 +1,27 @@
+---
+title: "Class Website"
+---
+
+```{r}
+library(tidyverse)
+
+set.seed(123)
+
+# Create income data and plot it
+tibble(
+  person = paste0("Person_", 1:100),
+  income = rnorm(100, mean = 55000, sd = 15000)
+) %>%
+  ggplot(aes(x = income)) +
+  geom_histogram(binwidth = 5000, fill = "steelblue", color = "white", alpha = 0.8) +
+  labs(
+    title = "Distribution of Income",
+    x = "Income ($)",
+    y = "Number of People"
+  ) +
+  theme_minimal()
+```
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
